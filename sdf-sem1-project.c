@@ -211,13 +211,10 @@ void Roulette()
     {
       printf("What number would you like to bet on?\n");
       scanf("%d", &number);
-      if (number == 00)
-        number = 37;
-
       srand(time(NULL));
       printf("Spinning...\n");
       sleep(3);
-      random = rand() % (MAX_NUMBER - MIN_NUMBER + 1) + MIN_NUMBER; 
+      random = (rand() % MAX_NUMBER) + MIN_NUMBER;
 
       printf("The ball landed on %d \n", random);
 
@@ -242,7 +239,7 @@ void Roulette()
       srand(time(NULL));
       printf("Spinning...\n");
       sleep(3);
-      random = rand() % (MAX_NUMBER - MIN_NUMBER + 1) + MIN_NUMBER;
+      random = (rand() % MAX_NUMBER) + MIN_NUMBER;
       printf("The ball landed on: %d \n", random);
 
       // User bets on even
