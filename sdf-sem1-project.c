@@ -36,6 +36,8 @@ void tictactoe()
       scanf("%d", &index);
       token = (p == 1) ? 'X' : 'O';
 
+      // assign token to position chosen
+
       if (index == 1 && matrix[1] == '1')
         matrix[1] = token;
       else if (index == 2 && matrix[2] == '2')
@@ -59,6 +61,9 @@ void tictactoe()
         printf("Please enter an unoccupied/valid position number\n");
         p--;
       }
+
+      // check winning condition
+
       if (matrix[1] == matrix[2] && matrix[2] == matrix[3])
         i = 1;
       else if (matrix[4] == matrix[5] && matrix[5] == matrix[6])
@@ -83,6 +88,8 @@ void tictactoe()
         i = 2;
       p++;
     } while (i == 2);
+
+    // print current status of matrix
 
     printf("[ %c ] [ %c ] [ %c ]\n", matrix[1], matrix[2], matrix[3]);
     printf("\n");
